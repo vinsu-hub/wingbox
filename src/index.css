@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/*
+  Wingbox Aviation brand tokens — source: Wingbox_Aviation_Complete_Website_Manus_Prompt.md, section 3.
+  Do not change these hex values without checking the supplied logo asset first.
+*/
+:root {
+  --wb-navy: #1b2a66;
+  --wb-red: #d2232a;
+  --wb-white: #ffffff;
+  --wb-light-gray: #f5f7fa;
+  --wb-dark-text: #172033;
+  --wb-muted-text: #5e6878;
+}
+
+@theme {
+  --color-wb-navy: var(--wb-navy);
+  --color-wb-red: var(--wb-red);
+  --color-wb-light-gray: var(--wb-light-gray);
+  --color-wb-dark-text: var(--wb-dark-text);
+  --color-wb-muted-text: var(--wb-muted-text);
+  --font-heading: "Oswald", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--wb-dark-text);
+  background: var(--wb-white);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+}
