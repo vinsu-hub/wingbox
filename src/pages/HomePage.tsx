@@ -1,19 +1,8 @@
-import wingboxLogo from "../assets/logo/wingbox-logo.png";
-
-/**
- * Scaffold placeholder — replace with the full homepage build per BRIEF.md
- * (hero, stats, about preview, services preview, team preview, clients
- * preview, why-wingbox, CTA, contact preview, footer).
- */
-export default function HomePage() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6 bg-wb-light-gray p-8 text-center">
-      <img src={wingboxLogo} alt="Wingbox Aviation Inc." className="h-16" />
-      <h1 className="text-3xl font-semibold text-wb-navy">Scaffold ready — build pending</h1>
-      <p className="max-w-xl text-wb-muted-text">
-        This is the project scaffold only. See BRIEF.md at the project root for the full
-        build specification.
-      </p>
-    </main>
-  );
-}
+import {Hero,SectionHeading,SecondaryButton,CTASection,Reveal,PageMeta} from '../components/Layout';
+import {StatStrip,ImageTextSection,ServicesGrid,TeamGrid,LogoGrid,ValueCard} from '../components/Content';
+import {ContactSection} from '../components/Contact';
+import {pageCopy,sectionCopy} from '../content/site';
+import {companyOverview} from '../content/company';
+import {airlineClients} from '../content/clientsAndPartners';
+import {whyWingbox} from '../content/services';
+export default function HomePage(){return <><PageMeta title="Aviation Technical Services & Consultancy" description={pageCopy.home.description}/><Hero {...pageCopy.home} home image="airport.jpg"/><StatStrip/><ImageTextSection label="ABOUT US" title={sectionCopy.aboutTitle} image="aircraft.jpg"><p>{companyOverview.paragraphs[0]}</p><p>{companyOverview.paragraphs[3]}</p><SecondaryButton href="/about">LEARN MORE ABOUT US</SecondaryButton></ImageTextSection><section className="section"><Reveal className="container"><SectionHeading label="OUR SERVICES" title={sectionCopy.servicesTitle} description={sectionCopy.servicesIntro}/><ServicesGrid/></Reveal></section><section className="section pale"><Reveal className="container"><SectionHeading label="OUR TEAM" title={sectionCopy.teamTitle}/><TeamGrid/><div className="section-end"><SecondaryButton href="/our-team">MEET THE FULL TEAM</SecondaryButton></div></Reveal></section><section className="section"><Reveal className="container"><SectionHeading label="OUR CLIENTS & PARTNERS" title={sectionCopy.clientsTitle}/><LogoGrid names={airlineClients}/><div className="section-end"><SecondaryButton href="/our-clients">VIEW OUR CLIENTS & PARTNERS</SecondaryButton></div></Reveal></section><section className="section pale"><Reveal className="container"><SectionHeading label="WHY WINGBOX" title={sectionCopy.advantageTitle}/><div className="values-grid">{whyWingbox.map((v,i)=><ValueCard key={v.title} title={v.title} body={v.body} index={i}/>)}</div></Reveal></section><CTASection/><ContactSection/></>}
