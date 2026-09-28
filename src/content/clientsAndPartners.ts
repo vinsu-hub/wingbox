@@ -18,7 +18,8 @@ export const airlineClients = [
 ];
 
 export const aircraftOwnersLessors = [
-  "BBAM / Carlyle Aviation Partners",
+  "BBAM",
+  "Carlyle Aviation Partners",
   "Castlelake",
   "NAC",
   "CALC",
@@ -46,8 +47,11 @@ export const academicPartners = [
   "National Aviation Academy of the Philippines",
   "University of Perpetual Help System DALTA",
   "PATTS College of Aeronautics",
-  "Aviation College of Science and Technology",
+  "FDSA Aviation College of Science and Technology Inc.",
 ];
 
 /** No approved testimonials supplied yet — do not fabricate any (spec section 37). */
 export const testimonials: { quote: string; name: string; title: string; company: string }[] = [];
+
+/** Existing technical collaborators, grouped visually with the training partner. */
+export const groupCollaborators = [aviationServicesTechnicalPartners[4], canopyPartner, aviationServicesTechnicalPartners[5]];
